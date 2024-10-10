@@ -1,0 +1,135 @@
+/* General Navbar Styling */
+*{
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.navbar {
+    display: flex;
+  
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #333;
+    color: white;
+    position: relative;
+    background-image: url(./Anime-Red-And-Black-Manga-Series-Best-Wallpaper-106359.jpg);
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li {
+    cursor: pointer;
+    position: relative; /* Added */
+    transition: color 0.3s ease;
+    font-weight: 600;
+}
+
+.nav-links li::before {
+    content: '';
+    position: absolute;
+    bottom: -3px; /* Adjusted for better positioning */
+    left: 0;
+    width: 0%; /* Initially hidden */
+    height: 3px;
+    background-color: rgb(212, 20, 20);
+    transition: width 0.5s ease; /* Smooth transition for the underline */
+}
+
+.nav-links li:hover::before {
+    width: 100%; /* Grows to full width on hover */
+}
+
+.nav-links li:hover {
+    color: #ff6b6b;
+}
+
+.search-input {
+    padding: 5px;
+    border-radius: 5px;
+    border: none;
+    width: 100%;
+    
+}
+
+/* Hamburger Menu Icon */
+.hamburger {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.hamburger .bar {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.hamburger .bar.open:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger .bar.open:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger .bar.open:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+/* Mobile Menu */
+.mobile-menu {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    background-color: #444;
+    color: white;
+    overflow: hidden;
+    height: 0;
+    transition: height 0.3s ease;
+    background-image: url(./Anime-Red-And-Black-Manga-Series-Best-Wallpaper-106359.jpg);
+
+}
+
+.mobile-menu.open {
+    height: 300px; /* Adjust height based on content */
+}
+
+.mobile-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.mobile-menu li {
+    padding: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.mobile-menu li:hover {
+    background-color: #555;
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+}

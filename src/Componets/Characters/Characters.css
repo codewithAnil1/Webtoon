@@ -1,0 +1,45 @@
+.characters {
+    display: flex;
+    justify-content: space-around;
+    padding: 50px;
+    background-image: url(./1193944.jpg);
+
+    margin-top:10px;
+  }
+  .Heading{
+    font-weight: 1500;
+    color: aliceblue;
+    padding :5px;
+  }
+  
+  .character-card {
+    position: relative;
+    overflow: hidden;
+    width: 250px;
+    transition: transform 0.3s;
+    height:65vh;
+    display: flex;
+    flex-wrap: wrap;
+    background-size: cover;
+    box-shadow: 3px 5px 4px 5px #0c0c0c;
+  }
+  
+  .character-card:hover {
+    transform: scale(1.1);
+  }
+  
+  .character-info {
+    position: absolute;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    width: 100%;
+    padding: 10px;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  
+  .character-card:hover .character-info {
+    opacity: 1;
+  }
+  
